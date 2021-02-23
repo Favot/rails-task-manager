@@ -6,6 +6,10 @@
 
     <p><li><%= hidden_field_tag "checked[#{task.id}]", "false" %>
     <%= check_box_tag "checked[#{task.id}]","#{task.id}", task.completed %>
+    <%= link_to "Delete",
+            task_path(task.id),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
     </li></p>
   <% end %>
 </ul>
